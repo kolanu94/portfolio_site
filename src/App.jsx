@@ -209,10 +209,16 @@ export default function App() {
 </p>
 
             {p.summary ? <p className="splashSummary">{p.summary}</p> : null}
-
+const links = {
+  resume: "portfolio_site/public/Himabindu_Kolanu_Resume_Updated_MS.pdf", // <-- put your link here
+  // other links...
+};
             <div className="splashCTA2">
   <Button variant="resume" href={links.resume || "#"}>Download Resume</Button>
 </div>
+            
+
+
 
             {/* <a className="scrollCue" href="#about">
               Scroll ↓
