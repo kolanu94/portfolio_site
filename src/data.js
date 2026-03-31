@@ -4,7 +4,6 @@ export const profile = {
   tagline: "Cloud & Distributed Systems • Reliability & Observability • AI Infrastructure",
   location: "Washington, US",
 
-  
   // summary: "I build cloud-native distributed systems with production-grade observability—focused on resiliency, performance, and incident reduction.",
   highlights: [
     "Reduced incident MTTR ~30% via structured logging, correlation IDs, and monitoring.",
