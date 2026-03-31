@@ -25,56 +25,58 @@ export const profile = {
     email: "mailto:himakolanu@gmail.com",
   },
 
-  experience: [
+ {
+  "experience": [
     {
-      company: "State of Ohio",
-      title: "Senior Java Developer",
-      period: "Sep 2025 – Present",
-      logo: "/logos/meta.webp",
-      tags: ["Java", "Distributed Systems", "Caching", "Async"],
-      bullets: [
+      "company": "State of Ohio",
+      "title": "Senior Java Developer",
+      "period": "Sep 2025 – Present",
+      "logo": "/logos/meta.webp",
+      "tags": ["Java", "Distributed Systems", "Caching", "Async"],
+      "bullets": [
         "Improved REST API throughput by ~20% via asynchronous processing and caching.",
-        "Contributed to low-latency distributed systems for reliability and data processing.",
-      ],
+        "Contributed to low-latency distributed systems for reliability and data processing."
+      ]
     },
     {
-      company: "Capital One",
-      title: "Senior Software Engineer",
-      period: "Jun 2024 – Aug 2025",
-      logo: "/logos/capone.webp",
-      tags: ["Java", "Spring Boot", "Microservices", "Observability", "AWS/Azure", "CI/CD"],
-      bullets: [
+      "company": "Capital One",
+      "title": "Senior Software Engineer",
+      "period": "Jun 2024 – Aug 2025",
+      "logo": "/logos/capone.webp",
+      "tags": ["Java", "Spring Boot", "Microservices", "Observability", "AWS/Azure", "CI/CD"],
+      "bullets": [
         "Designed telemetry solutions for real-time monitoring of customer-facing applications.",
         "Integrated structured logging + correlation IDs to enable end-to-end observability; reduced incident MTTR by ~30%.",
         "Built and optimized Spring Boot microservices; improved fault tolerance and latency characteristics.",
-        "Improved performance/availability with load balancing on AWS/Azure; mentored engineers and drove code quality.",
-      ],
+        "Improved performance/availability with load balancing on AWS/Azure; mentored engineers and drove code quality."
+      ]
     },
     {
-      company: "PayPal",
-      title: "Software Engineer",
-      period: "Aug 2022 – May 2024",
-      logo: "/logos/paypal.png",
-      tags: ["Java", "REST APIs", "Kubernetes", "Docker", "Jenkins", "Monitoring"],
-      bullets: [
+      "company": "PayPal",
+      "title": "Software Engineer",
+      "period": "Aug 2022 – May 2024",
+      "logo": "/logos/paypal.png",
+      "tags": ["Java", "REST APIs", "Kubernetes", "Docker", "Jenkins", "Monitoring"],
+      "bullets": [
         "Built high-performance payment APIs handling large transaction volumes.",
         "Designed telemetry/monitoring for payment microservices; improved dashboards and alerting for latency and health trends.",
-        "Automated deployments using Jenkins; containerized workloads using Docker/Kubernetes.",
-      ],
+        "Automated deployments using Jenkins; containerized workloads using Docker/Kubernetes."
+      ]
     },
     {
-      company: "Tata Consultancy Services",
-      title: "Software Engineer",
-      period: "Feb 2016 – Jul 2021",
-      logo: "/logos/tcs.jpeg",
-      tags: ["Java", "Spring", "Hibernate", "AWS", "ETL"],
-      bullets: [
+      "company": "Tata Consultancy Services",
+      "title": "Software Engineer",
+      "period": "Feb 2016 – Jul 2021",
+      "logo": "/logos/tcs.jpeg",
+      "tags": ["Java", "Spring", "Hibernate", "AWS", "ETL"],
+      "bullets": [
         "Led enterprise Java development and delivered cloud-based applications.",
         "Built automation tools reducing cloud management overhead by ~40%.",
-        "Improved batch processing workflows and optimized ETL execution times.",
-      ],
-    },
-  ],
+        "Improved batch processing workflows and optimized ETL execution times."
+      ]
+    }
+  ]
+}
 
   certifications: [
     { name: "Oracle Certified Associate, Java SE 8 Programmer", issuer: "Oracle", year: "2018", verify: "" },
