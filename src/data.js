@@ -33,7 +33,7 @@ export const profile = {
       company: "State of Ohio",
       title: "Senior Java Developer",
       period: "Sep 2025 – Present",
-      logo: "/logos/meta.webp",
+     // logo: "/logos/meta.webp",
       tags: ["Java", "Distributed Systems", "Caching", "Async"],
       bullets: [
         "Improved REST API throughput by ~20% via asynchronous processing and caching.",
