@@ -28,6 +28,17 @@ export const profile = {
 
   experience: [
     {
+      company: "State of Ohio",
+      title: "Senior Java Developer",
+      period: "Sep 2025 – Present",
+      logo: "/logos/meta.webp",
+      tags: ["Java", "Distributed Systems", "Caching", "Async"],
+      bullets: [
+        "Improved REST API throughput by ~20% via asynchronous processing and caching.",
+        "Contributed to low-latency distributed systems for reliability and data processing.",
+      ],
+    },
+    {
       company: "Capital One",
       title: "Senior Software Engineer",
       period: "Jun 2024 – Aug 2025",
@@ -43,24 +54,13 @@ export const profile = {
     {
       company: "PayPal",
       title: "Software Engineer",
-      period: "Aug 2023 – May 2024",
+      period: "Aug 2022 – May 2024",
       logo: "/logos/paypal.png",
       tags: ["Java", "REST APIs", "Kubernetes", "Docker", "Jenkins", "Monitoring"],
       bullets: [
         "Built high-performance payment APIs handling large transaction volumes.",
         "Designed telemetry/monitoring for payment microservices; improved dashboards and alerting for latency and health trends.",
         "Automated deployments using Jenkins; containerized workloads using Docker/Kubernetes.",
-      ],
-    },
-    {
-      company: "Meta",
-      title: "Java Developer",
-      period: "Aug 2022 – Dec 2022",
-      logo: "/logos/meta.webp",
-      tags: ["Java", "Distributed Systems", "Caching", "Async"],
-      bullets: [
-        "Improved REST API throughput by ~20% via asynchronous processing and caching.",
-        "Contributed to low-latency distributed systems for reliability and data processing.",
       ],
     },
     {
