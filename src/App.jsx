@@ -104,13 +104,12 @@ function LogoCircle({ text, logo }) {
     </div>
   );
 }
-const base = import.meta.env.BASE_URL; // e.g. "/portfolio_site1/"
+
+const base = import.meta.env.BASE_URL; // e.g. "/portfolio_site/"
 
 function logoUrl(path) {
   if (!path) return "";
-  // if already absolute (http) leave it
   if (/^https?:\/\//.test(path)) return path;
-  // ensure exactly one slash between base + path
   return `${base}${path}`.replace(/\/{2,}/g, "/");
 }
 
@@ -119,7 +118,15 @@ export default function App() {
   const [dark, setDark] = useState(true);
 
   const p = profile || {};
-  const links = safeObj(p.links);
+  const profileLinks = safeObj(p.links);
+
+  const links = {
+    ...profileLinks,
+    resume:
+      profileLinks.resume ||
+      `${import.meta.env.BASE_URL}Himabindu_Kolanu_Resume_Updated_MS.pdf`,
+  };
+
   const groupedSkills = useMemo(() => safeObj(p.skills), [p.skills]);
 
   const navItems = [
@@ -127,7 +134,7 @@ export default function App() {
     { href: "#skills", label: "SKILLS" },
     { href: "#experience", label: "EXPERIENCE" },
     { href: "#case-studies", label: "CASE STUDIES" },
-    //{ href: "#projects", label: "PROJECTS" },
+    // { href: "#projects", label: "PROJECTS" },
     { href: "#certs", label: "CERTIFICATIONS" },
     { href: "#contact", label: "CONTACT" },
   ];
@@ -162,11 +169,11 @@ export default function App() {
       {/* ===== NAV ===== */}
       <header className="nav">
         <div className="navInner">
-        <div className="navLeft">
-  <a className="brand" href="#top" aria-label="Home">
-  {/* <span className="monogram">{initials(p.name || "HK")}</span> */}
-  </a>
-</div>
+          <div className="navLeft">
+            <a className="brand" href="#top" aria-label="Home">
+              {/* <span className="monogram">{initials(p.name || "HK")}</span> */}
+            </a>
+          </div>
 
           <nav className="navCenter">
             {navItems.slice(0, 4).map((x) => (
@@ -198,27 +205,29 @@ export default function App() {
 
             <h1 className="splashName2">{p.name || "Your Name"}</h1>
 
-            <p className="splashRole2">{p.role || "Senior Software Engineer"}</p>
+            <p className="splashRole2">
+              {p.role || "Senior Software Engineer"}
+            </p>
 
             <p className="splashTag2">
               {p.tagline ||
                 "Cloud & Distributed Systems • Reliability & Observability • Performance"}
             </p>
+
             <p className="heroValueLine">
-  I help teams ship reliable services with SLOs, telemetry, and performance tuning.
-</p>
+              I help teams ship reliable services with SLOs, telemetry, and
+              performance tuning.
+            </p>
 
-            {p.summary ? <p className="splashSummary">{p.summary}</p> : null}
-const links = {
-  resume: "portfolio_site/public/Himabindu_Kolanu_Resume_Updated_MS.pdf", // <-- put your link here
-  // other links...
-};
+            {p.summary ? (
+              <p className="splashSummary">{p.summary}</p>
+            ) : null}
+
             <div className="splashCTA2">
-  <Button variant="resume" href={links.resume || "#"}>Download Resume</Button>
-</div>
-            
-
-
+              <Button variant="resume" href={links.resume || "#"}>
+                Download Resume
+              </Button>
+            </div>
 
             {/* <a className="scrollCue" href="#about">
               Scroll ↓
@@ -238,7 +247,6 @@ const links = {
                 <div className="summaryBadge">Production</div>
               </div>
 
-              {/* Small + subtle, not “fake dashboard” */}
               <div className="miniSignals" aria-hidden="true">
                 <div className="sigRow">
                   <span className="sigLabel">Latency</span>
@@ -275,7 +283,8 @@ const links = {
               </div>
 
               <p className="summaryNote muted">
-                *Signals are a visual metaphor for what I optimize in production.
+                *Signals are a visual metaphor for what I optimize in
+                production.
               </p>
             </div>
           </div>
@@ -396,7 +405,10 @@ const links = {
                 className={`timelineRow ${idx % 2 === 0 ? "left" : "right"}`}
               >
                 <div className="timelineNode">
-                <LogoCircle text={initials(e.company || "Co")} logo={logoUrl(e.logo)}/>
+                  <LogoCircle
+                    text={initials(e.company || "Co")}
+                    logo={logoUrl(e.logo)}
+                  />
                 </div>
 
                 <div className="timelineCard">
@@ -488,9 +500,13 @@ const links = {
         <Section id="certs" kicker="PROOF" title="Certifications">
           <div className="stack">
             {safeArr(p.certifications).length === 0 ? (
-              <Card title="Add your certifications" subtitle="Include verification links">
+              <Card
+                title="Add your certifications"
+                subtitle="Include verification links"
+              >
                 <p className="muted">
-                  Update <code>src/data.js</code> → <code>certifications</code>.
+                  Update <code>src/data.js</code> →{" "}
+                  <code>certifications</code>.
                 </p>
               </Card>
             ) : (
@@ -514,7 +530,10 @@ const links = {
 
         {/* ===== CONTACT ===== */}
         <Section id="contact" kicker="LET’S TALK" title="Contact">
-          <Card title="Let’s connect" subtitle="Fastest response via email / LinkedIn">
+          <Card
+            title="Let’s connect"
+            subtitle="Fastest response via email / LinkedIn"
+          >
             <div className="quick">
               <Button variant="email" href={links.email || "#"}>
                 Email
